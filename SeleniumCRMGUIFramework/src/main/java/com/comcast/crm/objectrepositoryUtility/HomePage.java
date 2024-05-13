@@ -14,6 +14,8 @@ public class HomePage {
 				PageFactory.initElements(driver,this);
 			}
 			
+	@FindBy(linkText="Products")
+	private WebElement productlink;
 	
 	@FindBy(linkText="Organizations")
 	private WebElement orgLink;
@@ -63,6 +65,11 @@ public class HomePage {
 		return moreLink;
 	}
 	
+	public WebElement getProductlink() {
+		return productlink;
+	}
+
+	
 	public void navigateToCampaingPage() {
 		Actions action= new Actions(driver);
 		action.moveToElement(moreLink).perform();
@@ -75,5 +82,6 @@ public class HomePage {
 		signoutLink.click();
 	}
 
+	
 
 }
